@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: 'text ui-widget-content ui-corner-all' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: 'text ui-widget-content ui-corner-all' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -18,9 +18,11 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  
+  <button type="submit" id='btn_credit_card' class="btn btn-primary btn-sm">
+    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+    <strong>Login</strong>
+  </button>
 <% end %>
 
 <%= render "users/shared/links" %>

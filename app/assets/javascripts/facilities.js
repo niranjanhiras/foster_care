@@ -1,5 +1,5 @@
 /* Run on load */
-$(document).ready(function() {
+ready = function() {
   $('#facilities_table').DataTable( {
       columnDefs: [ 
         {
@@ -20,4 +20,8 @@ $(document).ready(function() {
   }); // data table
 
 
-});
+};
+
+// Turbo link has its own event
+$(document).ready(ready)
+$(document).on('page:load', ready)
