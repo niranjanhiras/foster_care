@@ -17,4 +17,5 @@
 //= require turbolinks
 //= require jquery-ui
 //= require 'DataTables-1.10.11/media/js/jquery.dataTables.min'
+//= require 'menumaker/js/menumaker.min.js'
 //= require_tree .

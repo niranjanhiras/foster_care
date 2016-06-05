@@ -12,6 +12,9 @@
         
         <% end %>
         
+        <th>City</th>
+        <th>Zipcode</th>
+
       </tr>
     </thead>
 
@@ -25,6 +28,8 @@
               <td id='<%= "#{attr}_#{facility.id}" %>' ><%= facility.send(attr) %></td>  
         
           <% end %>
+          <td id= ''><%= facility.addresses.first.city  %></td>
+          <td id= ''><%= facility.addresses.first.zip  %></td>
         </tr>
       <% end %>
     </tbody>

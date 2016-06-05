@@ -1,2 +1,22 @@
-<%= link_to('Login', new_user_session_path) if !current_user && controller_name != 'sessions' %>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) if current_user %>
+<div id="cssmenu">
+  <ul>
+     <li><a href="/" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+     <li><a href="#"><i class="fa fa-fw fa-bars"></i> User Actions</a>
+        <ul>
+           
+
+           <% if !current_user && controller_name != 'sessions' %>
+             <li><a href="/users/sign_in"><i class="fa fa-fw fa-linkedin-square"></i> Login</a></li>
+           <% end %>
+
+           <% if current_user %>
+             <li><a rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-fw fa-user-times"></i> Logout</a></li> 
+             <li><a href="/users/no_id"><i class="fa fa-fw fa-gear"></i> My Profile</a></li>
+           <% end %>  
+
+        </ul>
+     </li>
+  </ul>
+</div>
+
+ 
