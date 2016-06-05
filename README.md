@@ -89,7 +89,7 @@ rake db:create db:migrate
 Load sample data from the file **db/sample_postgresql_data.sql**:
 
 ```
-psql -U postgres -W -a -d <DATABASE NAME> -f db/sample_postgresql_data.sql
+pg_restore -U postgres -W  -d <DATABASE NAME> 'db/sample_postgresql_data'
 ```
 
 Now you can write code and test on your local machine.
