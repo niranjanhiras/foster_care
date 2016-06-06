@@ -15,5 +15,6 @@
  *= require jquery-ui
  *= require 'bootstrap-3.3.6-dist/css/bootstrap.min'
  *= require 'DataTables-1.10.11/media/css/jquery.dataTables.min'
+ *= require 'font-awesome-4.6.3/css/font-awesome.min.css'
  *= require 'menumaker/css/styles.css'
  */
