@@ -4,7 +4,6 @@
      <li><a href="#"><i class="fa fa-fw fa-bars"></i> User Actions</a>
         <ul>
            
-
            <% if !current_user && controller_name != 'sessions' %>
              <li><a href="/users/sign_in"><i class="fa fa-fw fa-linkedin-square"></i> Login</a></li>
            <% end %>
@@ -16,6 +15,16 @@
 
         </ul>
      </li>
+
+     <% if current_user %>
+     <li><a href="#"><i class="fa fa-fw fa-bars"></i> Messages</a>
+        <ul>
+          <li><a href="/messages/"><i class="fa fa-fw  fa-list-alt"></i> All messages</a></li> 
+          <li><a href="/messages/new"><i class="fa fa-fw fa-edit"></i> New message</a></li>
+        </ul>
+     </li>
+     <% end %>
+
   </ul>
 </div>
 

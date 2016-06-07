@@ -14,41 +14,47 @@ This program has 4 user roles for users:
 - Facility administrator
 - Case Worker
 
-Demo login users are
+**Demo login users are**
 
-- Parents: 
-    ```
-      email: 'parent_<number>@hanoian.com'
-          with number from 1 to 3. For example 'parent_1@hanoian.com'
+- Parents:
+```
+  email: 'parent_<number>@hanoian.com'
+      with number from 1 to 3. For example 'parent_1@hanoian.com'
 
-      password: 'development'
-    ```
+  password: 'development'
+```
 
-- Childrens: 
-    ```
-      email: 'child_<number>@hanoian.com'
-          with number from 1 to 200. For example 'children_5@hanoian.com'
+- Childrens:
+```
+  email: 'child_<number>@hanoian.com'
+      with number from 1 to 200. For example 'children_5@hanoian.com'
 
-      password: 'development'
-    ```
+  password: 'development'
+```
 
-- Facility administrators: 
-    ```
-      email: 'facility_admin_<number>@hanoian.com'
-          with number from 1 to 20. For example 'facility_admin_10@hanoian.com'
+- Facility administrators:
+```
+  email: 'facility_admin_<number>@hanoian.com'
+      with number from 1 to 20. For example 'facility_admin_10@hanoian.com'
 
-      password: 'development'
-    ```
+  password: 'development'
+```
 
-- Case workers: 
-    ```
-      email: 'case_worker_<number>@hanoian.com'
-          with number from 1 to 40. For example 'case_worker_15@hanoian.com'
+- Case workers:
+```
+  email: 'case_worker_<number>@hanoian.com'
+      with number from 1 to 40. For example 'case_worker_15@hanoian.com'
 
-      password: 'development'
-    ```
+  password: 'development'
+```
 
+**Messsaging functionality**
 
+When you login as any user as specified above, you can send messages and receive messages from different users in the system.</br>
+This is an internal messaging system. Recipients are specified using email addresses.
+
+- Send to one user: Use single email address, for example `child_10@hanoian.com`
+- Send to many users: Use multiple emails, separated by comma, for example `child_5@hanoian.com, parent_2@hanoian.com, case_worker_3@hanoian.com`
 
 ###2. Application stack
 

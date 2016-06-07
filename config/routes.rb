@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'facilities#index'
   resources :facilities, only: [:index]
   resources :users, only: [:show, :edit, :update]
+  resources :messages
 end
