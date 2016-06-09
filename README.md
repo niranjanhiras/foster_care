@@ -100,8 +100,62 @@ pg_restore -U postgres -W  -d <DATABASE NAME> 'db/sample_postgresql_data'
 
 Now you can write code and test on your local machine.
 
+###4. Run development environment from a docker container
 
-###4. Deployment
+**If you don't want to setup Ruby 2.3.0 and PostgreSQL locally on your machine, you can write code and test Foster Care from a docker container.**
+
+I would assume that you are familiar with running docker on Mac and Linux.
+
+* Clone foster_care code to local machine:
+
+    ```
+    git clone https://github.com/linhchauatl/foster_care.git
+    cd foster_care
+    ```
+
+* One time run: Build the container
+
+    From terminal, go to the directory where you just clone the code of **foster_care**, and type:
+
+    ```
+    docker build -t foster_care_ubuntu:latest .
+    ``` 
+
+Afterward, the docker container is ready to be used.
+
+**Steps to run the foster_care Rails app in the container**
+
+- Each time you want to run the container: On your local machine, go to the directory **foster_care**, use this command:
+
+    ```
+    bin/run_container.sh
+    ```
+
+    You can look in the file **bin/run_container.sh** to see the details about how to run container.
+
+
+- Connect to the running container: From the local machine's terminal, run: `bin/ssh_to_container.sh`
+
+- First time you SSH to the container, run `rake db:create db:migrate`, then use `pg_store` to load sample data, similar to that step in **3. Development on your local machine**.
+
+- Run rails server inside the container: From the container command line, run: `bin/run_rails.sh`
+
+Afterward, if you run docker on Linux, you can access the foster_care via http://localhost:3000.
+
+If you run docker on Mac, on local Mac, open another terminal, run the command `docker-machine ls` to see the IP address of your docker machine. You will see something similar to:
+
+```
+NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
+default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1.10.1
+```
+
+So your foster_care will be accessible via http://192.168.99.100:3000.
+
+
+**Your `foster_care` directory on local machine is mounted to the container, so when you write code on the local machine, the code is available immediately to the Rails app running inside the container.**
+
+
+###5. Deployment
 
 This application is deployed using capistrano to a server (or servers) that has the following software installed:
 
